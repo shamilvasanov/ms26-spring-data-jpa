@@ -20,7 +20,7 @@ public class DriverController {
 
     @PostMapping
     @ResponseStatus(CREATED)
-    public void createDriver(DriverRequest request){
+    public void createDriver(@RequestBody DriverRequest request){
         driverService.createDriver(request);
     }
 
