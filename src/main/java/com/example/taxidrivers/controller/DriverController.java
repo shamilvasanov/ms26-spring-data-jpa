@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 import static org.springframework.http.HttpStatus.CREATED;
+import static org.springframework.http.HttpStatus.NO_CONTENT;
 
 @RestController
 @RequiredArgsConstructor
@@ -35,11 +36,13 @@ public class DriverController {
     }
 
     @DeleteMapping("{id}")
+    @ResponseStatus(NO_CONTENT)
     public void deleteDriver(@PathVariable Long id){
         driverService.deleteDriver(id);
     }
 
     @PatchMapping("{id}")
+    @ResponseStatus(NO_CONTENT)
     public void updateDriverPhone(@PathVariable Long id, @RequestBody UpdateDriverRequest request){
         driverService.updateDriverPhone(id,request);
     }
