@@ -1,6 +1,5 @@
 package com.example.taxidrivers.dao.entity;
 
-import com.example.taxidrivers.model.enums.DriverCategory;
 import com.example.taxidrivers.model.enums.DriverStatus;
 import jakarta.persistence.*;
 import lombok.*;
@@ -14,6 +13,7 @@ import java.math.BigDecimal;
 @EqualsAndHashCode(of = "id")
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class DriverEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,8 +26,8 @@ public class DriverEntity {
     @Enumerated(EnumType.STRING)
     private DriverStatus status;
 
-    @Enumerated(EnumType.STRING)
-    private DriverCategory category;
+
+    private String category;
 
     private String phone;
 

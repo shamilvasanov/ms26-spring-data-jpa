@@ -1,10 +1,8 @@
 package com.example.taxidrivers.model.response;
 
-import com.example.taxidrivers.model.enums.DriverCategory;
 import com.example.taxidrivers.model.enums.DriverStatus;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +11,7 @@ import java.math.BigDecimal;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class DriverResponse {
     private Long id;
 
@@ -22,7 +21,7 @@ public class DriverResponse {
 
     private DriverStatus status;
 
-    private DriverCategory category;
+    private String category;
 
     private String phone;
 }
