@@ -34,6 +34,7 @@ public class DriverServiceHandler implements DriverService {
     public DriverResponse getDriver(Long id) {
         log.error("ActionLog.getDriver.start id:{}",id);
         return DRIVER_MAPPER.mapEntityToResponse(fetchDriverOfExist(id));
+
     }
 
     @Override
