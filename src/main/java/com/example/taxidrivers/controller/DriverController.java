@@ -1,14 +1,14 @@
 package com.example.taxidrivers.controller;
 
+import com.example.taxidrivers.model.criteria.PageCriteria;
+import com.example.taxidrivers.model.criteria.DriverCriteria;
 import com.example.taxidrivers.model.request.DriverRequest;
 import com.example.taxidrivers.model.request.UpdateDriverRequest;
 import com.example.taxidrivers.model.response.DriverResponse;
+import com.example.taxidrivers.model.response.PageableDriverResponse;
 import com.example.taxidrivers.service.abstraction.DriverService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 import static org.springframework.http.HttpStatus.CREATED;
 import static org.springframework.http.HttpStatus.NO_CONTENT;
@@ -30,10 +30,6 @@ public class DriverController {
         return driverService.getDriver(id);
     }
 
-    @GetMapping()
-    public List<DriverResponse> getDrivers(){
-        return  driverService.getDrivers();
-    }
 
     @DeleteMapping("{id}")
     @ResponseStatus(NO_CONTENT)
@@ -45,6 +41,11 @@ public class DriverController {
     @ResponseStatus(NO_CONTENT)
     public void updateDriverPhone(@PathVariable Long id, @RequestBody UpdateDriverRequest request){
         driverService.updateDriverPhone(id,request);
+    }
+
+    @GetMapping()
+    public PageableDriverResponse getDrivers(PageCriteria pageCriteria, DriverCriteria driverCriteria){
+        return driverService.getDrivers(pageCriteria,driverCriteria);
     }
 
 

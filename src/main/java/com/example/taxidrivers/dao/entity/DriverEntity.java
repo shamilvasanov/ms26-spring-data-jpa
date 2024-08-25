@@ -21,6 +21,8 @@ public class DriverEntity {
 
     private String name;
 
+    private Integer age;
+
     private BigDecimal balance;
 
     @Enumerated(EnumType.STRING)

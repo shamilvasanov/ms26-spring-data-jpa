@@ -17,6 +17,8 @@ public class DriverResponse {
 
     private String name;
 
+    private Integer age;
+
     private BigDecimal balance;
 
     private DriverStatus status;
