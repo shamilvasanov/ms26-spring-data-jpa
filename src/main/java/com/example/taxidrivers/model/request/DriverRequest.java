@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 public class DriverRequest {
     private String name;
+    private Integer age;
     private BigDecimal balance;
     private String category;
     private String phone;
